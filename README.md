@@ -1,4 +1,4 @@
 Fortune-Cookie
 ==============
 
-Simple Web Page that displays Forutnes
+Simple Web Page that displays Fortunes
