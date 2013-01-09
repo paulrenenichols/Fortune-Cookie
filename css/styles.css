@@ -1,0 +1,54 @@
+/*Open and close fortune*/
+
+div.fortune-wrapper{
+    position: static;
+    height: 300px;
+}
+
+div.fortune{
+    position: relative;
+    height:300px;
+}
+
+
+#cookie-left.open{
+    left: -320px;    
+}
+
+#cookie-right.open{
+    left: 320px;
+}
+
+#cookie-left.closed{
+    left: -150px;    
+}
+
+#cookie-right.closed{
+    left: 150px;
+}
+
+
+.cookie{
+    z-index: 2;
+}
+
+/*Other Styles*/
+div.fortune, div.generate{
+    margin:10% auto;
+    width: 24%;
+
+}
+
+div.fortune div{
+    position: absolute;
+}
+
+div#scroll{
+    margin: 110px 20px;
+    width:300px; 
+}
+
+div.generate{
+    display: block;
+    clear: both;
+}
