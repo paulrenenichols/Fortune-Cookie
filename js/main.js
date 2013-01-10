@@ -8,11 +8,11 @@ $("div.fortune").bind('click', fortuneClick);
 */
 
 var fortuneClick = function(e) {
-	if( $(".cookie").hasClass("open") ) {
-		$(".cookie").switchClass("open", "closed", 500, "easeOutQuint");
+	if( $(".cookie").hasClass("closed") ) {
+		$(".cookie").switchClass("closed", "open", 500, "easeOutQuint");
 	}
 	else {
-		$(".cookie").switchClass("closed", "open", 500, "easeOutQuint");
+		$(".cookie").switchClass("open", "closed", 500, "easeOutQuint");
 
 	}
 };
