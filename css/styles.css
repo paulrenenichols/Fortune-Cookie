@@ -1,54 +1,81 @@
+/*body*/
+    .body{
+        padding: 2em 0 0 0;
+        margin: 0 auto;
+    }
+
+
+/*Div Widths*/
+
+    div.fortune-wrapper, div.generate, form.create-fortune{
+        width:24%;
+        margin: 0 auto;
+    }
+
+
+/*header*/
+
+    header{
+        text-align: center;
+    }
+
+
 /*Open and close fortune*/
 
-div.fortune-wrapper{
-    position: static;
-    height: 300px;
-}
+    div.fortune-wrapper{
+        position: static;
+        height: 300px;
+    }
 
-div.fortune{
-    position: relative;
-    height:300px;
-}
+        div.fortune{
+            position: relative;
+            height:300px;
+        }
+
+            #cookie-left.open{
+                left: -320px;    
+            }
+
+            #cookie-right.open{
+                left: 320px;
+            }
+
+            #cookie-left.closed{
+                left: -150px;    
+            }
+
+            #cookie-right.closed{
+                left: 150px;
+            }
 
 
-#cookie-left.open{
-    left: -320px;    
-}
+            .cookie{
+                z-index: 2;
+            }
 
-#cookie-right.open{
-    left: 320px;
-}
+/*Generate Button*/
 
-#cookie-left.closed{
-    left: -150px;    
-}
-
-#cookie-right.closed{
-    left: 150px;
-}
-
-
-.cookie{
-    z-index: 2;
-}
+    div.generate{
+        display: block;
+        clear: both;
+    }
 
 /*Other Styles*/
-div.fortune, div.generate{
-    margin:10% auto;
-    width: 24%;
 
-}
 
-div.fortune div{
-    position: absolute;
-}
+    div.fortune div{
+        position: absolute;
+    }
 
-div#scroll{
-    margin: 110px 20px;
-    width:300px; 
-}
+    div#scroll{
+        margin: 110px 20px;
+        width:300px; 
+    }
 
-div.generate{
-    display: block;
-    clear: both;
-}
+
+
+/*fieldset*/
+
+    form.create-fortune{
+        text-align: center;  
+    }

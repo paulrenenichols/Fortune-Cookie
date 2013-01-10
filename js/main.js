@@ -17,4 +17,4 @@ var fortuneClick = function(e) {
 	}
 };
 
-$("div.fortune").bind('click', fortuneClick);
+$("div.fortune, div.generate, #share").bind('click', fortuneClick);
