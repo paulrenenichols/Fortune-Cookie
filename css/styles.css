@@ -20,8 +20,7 @@
     }
 
 
-/*Open and close fortune*/
-
+/*Fortune Cookie*/
     div.fortune-wrapper{
         position: static;
         height: 300px;
@@ -32,26 +31,56 @@
             height:300px;
         }
 
-            #cookie-left.open{
-                left: -320px;    
-            }
-
-            #cookie-right.open{
-                left: 320px;
-            }
-
-            #cookie-left.closed{
-                left: -150px;    
-            }
-
-            #cookie-right.closed{
-                left: 150px;
-            }
-
+        div.fortune div{
+            position: absolute;
+        }
 
             .cookie{
                 z-index: 2;
             }
+                /*img.cookie-pic{
+                    width:100%;
+                }*/
+
+             div#scroll{
+                background: whitesmoke;
+                margin: 100px 0;
+                width:300px;
+                text-align: center;
+            }
+
+                #scroll p{
+                    padding: 1em 3em;
+                }
+
+
+    /*Open and close fortune*/
+        /*.open{
+            width:75%;
+        }
+
+        .closed{
+            width: 95%;
+        }*/
+            #cookie-left.open{
+                left: -300px;    
+            }
+
+            #cookie-right.open{
+                left: 300px;
+            }
+
+            #cookie-left.closed{
+                left: -150px;
+                /*left: 50%; /*responsive*/
+            }
+
+            #cookie-right.closed{
+                left: 150px;
+                /*left: 50%; /*responsive*/
+            }
+
+
 
 /*Generate Button*/
 
@@ -60,22 +89,10 @@
         clear: both;
     }
 
-/*Other Styles*/
-
-
-    div.fortune div{
-        position: absolute;
-    }
-
-    div#scroll{
-        margin: 110px 20px;
-        width:300px; 
-    }
-
-
 
 /*fieldset*/
 
     form.create-fortune{
         text-align: center;  
     }
+
