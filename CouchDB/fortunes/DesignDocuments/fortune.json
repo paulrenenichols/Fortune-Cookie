@@ -1,9 +1,24 @@
 {
 	"language": "javascript",
 	
-	"validate_doc_update": "",
+	"validate_doc_update": 
+	"function(newDoc, savedDoc, userCtx) {
+		
+		function require(field, message) {
+			message = message || "Document must have a " + field;
+			if (!newDoc[field]) throw({forbidden : message});
+		};
+		
+		
+	};",
 	
-	"views": {
+	"views": { 
+		"fortune_count":
+			"map": "function(doc) {
+				if(doc.sequence_id && doc.fortune) {
+					emit(doc.sequence_id, doc.fortune);				}
+			};",
+			"reduce": "_count"
 	},
 	
 	"shows": {
