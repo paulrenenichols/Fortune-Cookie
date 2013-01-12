@@ -8,10 +8,11 @@
         };
         function unchanged(field) {
             if (oldDoc && toJSON(oldDoc[field]) != toJSON(newDoc[field])) {
+                throw( {forbidden : \"Can't change the field \" + field + \" on update.\"} );
             }
         };
         
-        if (newDoc.type == "fortune") {
+        if (newDoc.type == \"fortune\") {
             require(\"body\");
             require(\"random_id\");
             require(\"created_at\");
@@ -22,7 +23,7 @@
     
     "views": { 
         "random_fortune": {
-            "map": "function(doc) { if(doc.random_id && doc.body) { emit(doc.random_id, doc.body); }}; ",
+            "map": "function(doc) { if(doc.random_id && doc.body) { emit(doc.random_id, doc.body); }}; "
             }
     },
     "shows": {

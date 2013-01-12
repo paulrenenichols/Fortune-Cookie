@@ -5,6 +5,7 @@ var validate_doc_update = function(newDoc, oldDoc, userCtx) {
         };
         function unchanged(field) {
             if (oldDoc && toJSON(oldDoc[field]) != toJSON(newDoc[field])) {
+            	throw( {forbidden : "Can't change the field " + field + " on update."} );
             }
         };
         
