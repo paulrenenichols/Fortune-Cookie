@@ -120,7 +120,7 @@
         text-align: center;  
     }
 
-        .create-fortune input#new-fortune{
+        .create-fortune textarea#new-fortune{
             display: block;
             width:50em;
             padding: 2.5em 10em;
