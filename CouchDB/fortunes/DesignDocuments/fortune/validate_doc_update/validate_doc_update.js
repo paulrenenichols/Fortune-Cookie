@@ -10,9 +10,9 @@ var validate_doc_update = function(newDoc, oldDoc, userCtx) {
         
         if (newDoc.type == "fortune") {
             require("body");
-            require("sequence_id");
+            require("random_id");
             require("created_at");
-            unchanged("sequence_id");
+            unchanged("random_id");
             unchanged("created_at");
         }
     };

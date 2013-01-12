@@ -3,7 +3,7 @@
     
     "validate_doc_update": "function(newDoc, oldDoc, userCtx) {
         function require(field, message) {
-            message = message || "Document must have a " + field;
+            message = message || \"Document must have a \" + field;
             if (!newDoc[field]) throw({forbidden : message});
         };
         function unchanged(field) {
@@ -12,18 +12,17 @@
         };
         
         if (newDoc.type == "fortune") {
-            require("body");
-            require("sequence_id");
-            require("created_at");
-            unchanged("sequence_id");
-            unchanged("created_at");
+            require(\"body\");
+            require(\"random_id\");
+            require(\"created_at\");
+            unchanged(\"random_id\");
+            unchanged(\"created_at\");
         }
     };",
     
     "views": { 
-        "fortune_count": {
-            "map": "function(doc) { if(doc.sequence_id && doc.body) { emit(doc.sequence_id, doc.body); }",
-            "reduce": "_count"
+        "random_fortune": {
+            "map": "function(doc) { if(doc.random_id && doc.body) { emit(doc.random_id, doc.body); }}; ",
             }
     },
     "shows": {
