@@ -1,0 +1,1 @@
+var map = function(doc) { if(doc.sequence_id && doc.body) { emit(doc.sequence_id, doc.body); }}; 
