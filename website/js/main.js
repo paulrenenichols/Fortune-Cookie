@@ -10,23 +10,17 @@ $("div.fortune").bind('click', fortuneClick);
 var fortuneClick = function(e) {
 	if( $(".cookie").hasClass("closed") ) {
 		$(".cookie").switchClass("closed", "open", 500, "easeOutQuint");
+		  $("div#scroll").fadeIn(400, function () {
+			  $("div#scroll p").fadeIn(100);
+			  });
 	}
 	else {
-		$(".cookie").switchClass("open", "closed", 500, "easeOutQuint");
 
+		  $("div#scroll").fadeOut(200, function () { 		
+			  $(".cookie").switchClass("open", "closed", 500, "easeOutQuint");
+			  });
 	}
 };
 
 
-var scrollFade = function () {
-  $("div#scroll").fadeIn(3000, function () {
-  $("div#scroll p").fadeIn(100);
-  });
-  return false;
-};
-
-
-$("div.fortune, div.generate, #share").bind({
-	'click' : fortuneClick,
-	'click' : scrollFade,
-	});
+$("div.fortune, div.generate, #share").bind('click', fortuneClick);
