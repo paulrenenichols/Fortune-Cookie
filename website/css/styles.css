@@ -121,42 +121,54 @@
     .form-fortune{
         background: #444;
         width:100%;
-        padding: 10px 0;
-        margin-top: 4em;
+        padding: 1px 0 0 0;
+        margin-top: 7em;
+        text-align: center;
     }
 
         form.create-fortune{
             background: rgb(209, 209, 209);
-            width: 50%;
-            padding: 35px 0;  
+            width: 100%;
+            padding: 1px 0;  
             margin: 0 auto;
-            margin-top: -50px;
+            margin-top: 2em;
             text-align: center;
         }
 
-            .create-fortune textarea#new-fortune{
-                display: block;
-                padding: 2.5em 10em;
-                margin:2% auto;
-                text-align: left;
+            .create-fortune fieldset{
+                background: rgba(247, 247, 247, 1);
+                width: 50%;
+                padding: 35px 0;
+                margin: 0 auto;
+                margin-top: -113px;
+                text-align: center;
+                height: 200px;
+                border: solid 1px black;
             }
 
-            .create-fortune input#share{
-                cursor:pointer;
-                display:inline-block;
-                width:200px; /* strech horiziontally */
-                height:50px;/* strech vertically */ 
-                border:2px blue; /* hide borders from IE */
-                background: rgb(201,222,150); /* Old browsers */
-                background: -moz-linear-gradient(top,  rgba(201,222,150,1) 0%, rgba(138,182,107,1) 44%, rgba(57,130,53,1) 100%); /* FF3.6+ */
-                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(201,222,150,1)), color-stop(44%,rgba(138,182,107,1)), color-stop(100%,rgba(57,130,53,1))); /* Chrome,Safari4+ */
-                background: -webkit-linear-gradient(top,  rgba(201,222,150,1) 0%,rgba(138,182,107,1) 44%,rgba(57,130,53,1) 100%); /* Chrome10+,Safari5.1+ */
-                background: -o-linear-gradient(top,  rgba(201,222,150,1) 0%,rgba(138,182,107,1) 44%,rgba(57,130,53,1) 100%); /* Opera 11.10+ */
-                background: -ms-linear-gradient(top,  rgba(201,222,150,1) 0%,rgba(138,182,107,1) 44%,rgba(57,130,53,1) 100%); /* IE10+ */
-                background: linear-gradient(to bottom,  rgba(201,222,150,1) 0%,rgba(138,182,107,1) 44%,rgba(57,130,53,1) 100%); /* W3C */
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9de96', endColorstr='#398235',GradientType=0 ); /* IE6-9 */
-                padding:6px 0 0 2px;
-                color:white;
-                text-shadow:blue;
-                font-size:1.33em;
-            }
+                .create-fortune textarea#new-fortune{
+                    display: block;
+                    padding: 2.5em 10em;
+                    margin:2% auto;
+                    text-align: left;
+                }
+
+                .create-fortune input#share{
+                    display:inline-block;
+                    background: rgb(201,222,150); /* Old browsers */
+                    background: -moz-linear-gradient(top,  rgba(201,222,150,1) 0%, rgba(138,182,107,1) 44%, rgba(57,130,53,1) 100%); /* FF3.6+ */
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(201,222,150,1)), color-stop(44%,rgba(138,182,107,1)), color-stop(100%,rgba(57,130,53,1))); /* Chrome,Safari4+ */
+                    background: -webkit-linear-gradient(top,  rgba(201,222,150,1) 0%,rgba(138,182,107,1) 44%,rgba(57,130,53,1) 100%); /* Chrome10+,Safari5.1+ */
+                    background: -o-linear-gradient(top,  rgba(201,222,150,1) 0%,rgba(138,182,107,1) 44%,rgba(57,130,53,1) 100%); /* Opera 11.10+ */
+                    background: -ms-linear-gradient(top,  rgba(201,222,150,1) 0%,rgba(138,182,107,1) 44%,rgba(57,130,53,1) 100%); /* IE10+ */
+                    background: linear-gradient(to bottom,  rgba(201,222,150,1) 0%,rgba(138,182,107,1) 44%,rgba(57,130,53,1) 100%); /* W3C */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9de96', endColorstr='#398235',GradientType=0 ); /* IE6-9 */                                        
+                    width:200px; 
+                    height:50px;
+                    padding:6px 0 0 2px;
+                    border:2px blue;
+                    margin: 0 0 2em 0;
+                    color:white;
+                    font-size:1.33em;
+                    cursor:pointer;
+                }

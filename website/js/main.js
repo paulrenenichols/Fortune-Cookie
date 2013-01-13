@@ -17,4 +17,16 @@ var fortuneClick = function(e) {
 	}
 };
 
-$("div.fortune, div.generate, #share").bind('click', fortuneClick);
+
+var scrollFade = function () {
+  $("div#scroll").fadeIn(3000, function () {
+  $("div#scroll p").fadeIn(100);
+  });
+  return false;
+};
+
+
+$("div.fortune, div.generate, #share").bind({
+	'click' : fortuneClick,
+	'click' : scrollFade,
+	});
