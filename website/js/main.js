@@ -47,11 +47,11 @@ var newFortuneTextInputChange = function(e) {
 	
 	if (newFortuneContent == "") {
 		//console.log("newFortuneTextInputChange triggered: " + newFortuneContent); 
-		$("#share").addClass(".submit-disabled");
+		$("#share").addClass("submit-disabled");
 		$("#share").attr("disabled", "disabled");
 	}
 	else {
-		$("#share").removeClass(".submit-disabled");
+		$("#share").removeClass("submit-disabled");
 		$("#share").removeAttr("disabled");
 	}
 };
