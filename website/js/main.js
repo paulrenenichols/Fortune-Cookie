@@ -8,6 +8,7 @@ $("div.fortune").bind('click', fortuneClick);
 */
 
 var fortuneClick = function(e) {
+	console.log("fortuneClick");
 	if( $(".cookie").hasClass("closed") ) {
 		$(".cookie").switchClass("closed", "open", 500, "easeOutQuint");
 		  $("div#scroll").fadeIn(400, function () {
@@ -33,6 +34,29 @@ var getOnClick = function(e) {
 	.success( getFortuneBody ).error( function(err) { alert("Error: " + err.responseText + " Status: " + err.status); })
 	.complete( function() { } );
 };
+
+/*
+ *  This function exists to enable the submit button
+ *  only when there is actually text in the textarea #new-fortune
+ */
+
+var newFortuneTextInputChange = function(e) {
+	var newFortuneContent = $("#new-fortune").val();
+	
+	//console.log("newFortuneTextInputChange triggered: " + newFortuneContent);
+	
+	if (newFortuneContent == "") {
+		//console.log("newFortuneTextInputChange triggered: " + newFortuneContent); 
+		$("#share").addClass(".submit-disabled");
+		$("#share").attr("disabled", "disabled");
+	}
+	else {
+		$("#share").removeClass(".submit-disabled");
+		$("#share").removeAttr("disabled");
+	}
+};
+
+$("#new-fortune").bind("input propertychange", newFortuneTextInputChange);
 
 $("div.fortune, div.generate").bind('click', fortuneClick).bind('click', getOnClick);
 
