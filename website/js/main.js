@@ -34,4 +34,6 @@ var getOnClick = function(e) {
 	.complete( function() { } );
 };
 
-$("div.fortune, div.generate, #share").bind('click', fortuneClick).bind('click', getOnClick);
+$("div.fortune, div.generate").bind('click', fortuneClick).bind('click', getOnClick);
+
+$("#share");
