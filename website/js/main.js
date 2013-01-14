@@ -31,7 +31,7 @@ var getFortuneBody = function(data) {
 
 var getOnClick = function(e) {
 	var jqxhr = $.get("http://127.0.0.1:5984/fortunes/_design/fortune/_view/random_fortune?key=0.3")
-	.success( getFortuneBody ).error( function(err) { alert("Error: " + err.responseText + " Status: " + err.status); })
+	.success( getFortuneBody ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
 	.complete( function() { } );
 };
 
