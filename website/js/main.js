@@ -15,10 +15,9 @@ var fortuneClick = function(e) {
 			  });
 	}
 	else {
-
-		  $("div#scroll").fadeOut(200, function () { 		
+ 		
 			  $(".cookie").switchClass("open", "closed", 500, "easeOutQuint");
-			  });
+			  $("div#scroll").fadeOut(50);
 	}
 };
 
