@@ -14,7 +14,7 @@ body{
     background: url('../img/smooth_wall.png');
 }
 
-    div.wrapper{
+    .wrapper{
         background: #72af9b;
         /* IE9 SVG, needs conditional override of 'filter' to 'none' */
         background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNzJhZjliIiBzdG9wLW9wYWNpdHk9IjAuODEiLz4KICAgIDxzdG9wIG9mZnNldD0iMSUiIHN0b3AtY29sb3I9IiM3MmFmOWIiIHN0b3Atb3BhY2l0eT0iMC44MSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1NCUiIHN0b3AtY29sb3I9IiNjYWVlZWEiIHN0b3Atb3BhY2l0eT0iMC41NyIvPgogICAgPHN0b3Agb2Zmc2V0PSI2OCUiIHN0b3AtY29sb3I9IiNlMWZmZmYiIHN0b3Atb3BhY2l0eT0iMC42NyIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmRmZmZmIiBzdG9wLW9wYWNpdHk9IjAuODkiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
@@ -25,10 +25,10 @@ body{
         background: -ms-linear-gradient(45deg,  rgba(114,175,155,0.81) 0%,rgba(114,175,155,0.81) 1%,rgba(202,238,234,0.57) 54%,rgba(225,255,255,0.67) 68%,rgba(253,255,255,0.89) 100%); /* IE10+ */
         background: linear-gradient(45deg,  rgba(114,175,155,0.81) 0%,rgba(114,175,155,0.81) 1%,rgba(202,238,234,0.57) 54%,rgba(225,255,255,0.67) 68%,rgba(253,255,255,0.89) 100%); /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf72af9b', endColorstr='#e3fdffff',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-
+        padding: 20px 0 0 0;
     }
 
-        div#scroll{
+        #scroll{
             background: whitesmoke;
             background: url('../img/exclusive_paper.png');
             border-bottom: solid 3px rgba(165, 163, 172, 0.66);
@@ -45,7 +45,7 @@ body{
 
 /*Div Widths*/
 
-    div.fortune-wrapper, div.generate{
+    .fortune-wrapper, div.generate{
         width:24%;
         margin: 0 auto;
     }
