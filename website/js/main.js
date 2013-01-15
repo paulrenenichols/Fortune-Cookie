@@ -45,7 +45,7 @@ var postNewFortuneToDatabase = function(fortuneBody) {
 	fortuneData["created_at"] = currentDate.toUTCString();
 	
 	var jsonFortuneData = JSON.stringify(fortuneData);
-	console.log(jsonFortuneData);
+	//console.log(jsonFortuneData);
 	
 	
 	//var jqxhr = $.post("http://127.0.0.1:5984/fortunes/", JSON.stringify(fortuneData))
@@ -73,6 +73,7 @@ var submitNewFortune = function(e) {
 
 var postNewFortuneSuccess = function(data) {
 	console.log("fortune posted to database: " + data);
+	$("#new-fortune").val("");
 };
 
 /*
