@@ -35,11 +35,50 @@ var getOnClick = function(e) {
 	.complete( function() { } );
 };
 
+var postNewFortuneToDatabase = function(fortuneBody) {
+	var fortuneData = {};
+	fortuneData["type"] = "fortune";
+	fortuneData["body"] = fortuneBody;
+	fortuneData["random_id"] = Math.random();
+	
+	var currentDate = new Date();
+	fortuneData["created_at"] = currentDate.toUTCString();
+	
+	var jsonFortuneData = JSON.stringify(fortuneData);
+	console.log(jsonFortuneData);
+	
+	
+	//var jqxhr = $.post("http://127.0.0.1:5984/fortunes/", JSON.stringify(fortuneData))
+	//.success( postNewFortuneSuccess ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
+	//.complete( function() { } );
+	
+	
+	$.ajax({
+		type: "POST",
+		url: "http://127.0.0.1:5984/fortunes/",
+		data: jsonFortuneData,
+		success: postNewFortuneSuccess,
+		dataType: "json",
+		contentType: "application/json"
+	});
+};
+
+var submitNewFortune = function(e) {
+	
+	//This line of code prevents page reload when we click the submit button.
+	e.preventDefault();
+	
+	postNewFortuneToDatabase( $("#new-fortune").val() );
+};
+
+var postNewFortuneSuccess = function(data) {
+	console.log("fortune posted to database: " + data);
+};
+
 /*
  *  This function exists to enable the submit button
  *  only when there is actually text in the textarea #new-fortune
  */
-
 var newFortuneTextInputChange = function(e) {
 	var newFortuneContent = $("#new-fortune").val();
 	
@@ -60,4 +99,12 @@ $("#new-fortune").bind("input propertychange", newFortuneTextInputChange);
 
 $("div.fortune, div.generate").bind('click', fortuneClick).bind('click', getOnClick);
 
-$("#share");
+/*
+ * 2013Jan15  Paul Nichols
+ * 
+ * Tried using the submit event, but could not disable reload while using it.
+ * 
+ * Now that I'm using the click event on the submit button, the page reload is disabled.
+ * 
+ */
+$("#share").click( submitNewFortune );
