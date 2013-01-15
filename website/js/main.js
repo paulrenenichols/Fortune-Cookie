@@ -63,6 +63,30 @@ var postNewFortuneToDatabase = function(fortuneBody) {
 	});
 };
 
+var foundURLInText = function(text) {
+	
+	/*
+	 * This pattern represents a way of searching for "http:" or "https:"
+	 */
+	var pattern = /https?\:/;
+
+	//test to see if the text contains a URL like string
+	var result = text.match(pattern);
+
+	/*
+	 * If the result is not null, then we found a URL like string,
+	 * so return true to indicate that we found a match.
+	 * 
+	 * Otherwise return false to indicate no match found.
+	 */
+	if( result != null ) {
+		return true;
+	}
+	else {
+		return false;
+	}
+};
+
 var submitNewFortune = function(e) {
 	
 	//This line of code prevents page reload when we click the submit button.
@@ -72,25 +96,35 @@ var submitNewFortune = function(e) {
 };
 
 var postNewFortuneSuccess = function(data) {
-	console.log("fortune posted to database: " + data);
+	//console.log("fortune posted to database: " + data);
 	$("#new-fortune").val("");
 };
 
 /*
  *  This function exists to enable the submit button
  *  only when there is actually text in the textarea #new-fortune
+ *  
+ *  2013Jan15  Paul Nichols
+ *  This function now checks for URL-like strings as the user is typing
+ *  to prevent the database from getting spammed with URLs.
  */
 var newFortuneTextInputChange = function(e) {
 	var newFortuneContent = $("#new-fortune").val();
 	
 	//console.log("newFortuneTextInputChange triggered: " + newFortuneContent);
 	
-	if (newFortuneContent == "") {
-		//console.log("newFortuneTextInputChange triggered: " + newFortuneContent); 
+	if (newFortuneContent == "") {  //disable submit if fortune text box is empty
+		
 		$("#share").addClass("submit-disabled");
 		$("#share").attr("disabled", "disabled");
 	}
-	else {
+	else if( foundURLInText( $("#new-fortune").val() ) ) {   //disable submit and alert user if they try entering a URL
+		$("#share").addClass("submit-disabled");
+		$("#share").attr("disabled", "disabled");
+		alert("URLs are not allowed in fortunes.");
+	}
+	else {   //If the text box is not empty, and there are no URLs in the text box, enable submit.
+		
 		$("#share").removeClass("submit-disabled");
 		$("#share").removeAttr("disabled");
 	}
