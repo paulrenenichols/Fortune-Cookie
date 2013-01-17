@@ -14,6 +14,8 @@ var fortuneClick = function(e) {
 		  $("div#scroll").fadeIn(400, function () {
 			  $("div#scroll p").fadeIn(100);
 			  });
+		  
+		  getRandomFortune();
 	}
 	else {
  		
@@ -32,6 +34,125 @@ var getFortuneBody = function(data) {
 var getOnClick = function(e) {
 	var jqxhr = $.get("http://127.0.0.1:5984/fortunes/_design/fortune/_view/random_fortune?key=0.3")
 	.success( getFortuneBody ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
+	.complete( function() { } );
+};
+
+
+
+/*
+ * This algorithm is curtesy of @chewxy.
+ * 
+ * You find it at the bottom of this blog post:
+ * 
+ * http://blog.chewxy.com/2012/11/16/random-documents-from-couchdb/
+ * 
+ */
+var getRandomFortune = function(event) {
+	
+	var putFortuneInScrollElement = function(fortuneBody) {
+		$("div#scroll p").text(fortuneBody);
+	};
+	
+	/*
+	 * This function is the event handler for successfully
+	 * grabbing our random fortune data the first time.
+	 * 
+	 * If we get zero rows, we try again.
+	 * 
+	 * When we try again, we do the opposite of what we
+	 * did the first time.  If we searched ascending the
+	 * first time, we search descending the second time.
+	 * 
+	 * If we searched descending the first time, we search
+	 * ascending the second time.
+	 */
+	var getRandomFortuneRowsFirstTime = function(data) {
+		var couchData = $.parseJSON(data);
+		var randomFortuneRows = couchData['rows'];
+		
+		if( randomFortuneRows.length == 0 ) {
+			
+			/*
+			 * Do the opposite search of last time.
+			 */
+			if( getFortunesDescending ) { //if we searched descending last time, do ascending this time
+				
+				fortuneURL = ascendingFortuneURL;
+			}
+			else { //if we did ascending search last time, do descending this time
+				
+				fortuneURL = descendingFortuneURL;
+			}
+			$.get(fortuneURL)
+			.success( getRandomFortuneRowsSecondTime ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
+			.complete( function() { } );
+		}
+		else { //We have rows, use the first one.
+			putFortuneInScrollElement(randomFortuneRows[0]["value"]);
+		}
+	};
+
+	/*
+	 * This function is the event handler for successfully
+	 * grabbing our random fortune data the second time.
+	 */
+	var getRandomFortuneRowsSecondTime = function(data) {
+		var couchData = $.parseJSON(data);
+		var randomFortuneRows = couchData['rows'];
+		
+		putFortuneInScrollElement(randomFortuneRows[0]["value"]);
+	};
+	
+	//Generate a Random Key for searching the view
+	var randomKey = Math.random();
+	
+	/*
+	 * Generate a "Coin Flip", which is a Random Number
+	 * with a value of either 0 or 1.
+	 * 
+	 * Since Math.random returns a Random Number r such 
+	 * that 0 <= r < 1, so 0 <= 2r < 2.
+	 * 
+	 * So if take the "floor" of 2r, we should get a random
+	 * number that is either 0 or 1.  This is our "Coin Flip".
+	 */
+	var coinFlip = Math.floor( 2 * Math.random() );
+	
+	/*
+	 * We are going to use the Coin Flip to determine whether or not
+	 * we are going to get fortunes from the database in ascending
+	 * or in descending order.
+	 * 
+	 * If coinFlip == 1, we will get the fortunes in descending order.
+	 * 
+	 * If coinFlip == 0, we will get the fortunes in ascending order.
+	 */
+	var getFortunesDescending = false;
+	if( coinFlip == 1 ) {
+		getFortunesDescending = true;
+	}
+	
+	/*
+	 * This is the base URL for the view.  We are going to concatenate
+	 * strings on to the end of it to specify parameters for the searching
+	 * the view.
+	 */
+	var baseViewURL = "http://127.0.0.1:5984/fortunes/_design/fortune/_view/random_fortune?";
+	
+	var endKeyString = "endkey=";
+	var startKeyString = "startkey=";
+	var descendingFortuneString = "&descending=true";
+	
+	var ascendingFortuneURL = baseViewURL + startKeyString + randomKey;
+	var descendingFortuneURL = baseViewURL + endKeyString + randomKey + descendingFortuneString;
+	
+	var fortuneURL = ascendingFortuneURL;
+	if( getFortunesDescending ) {
+		fortuneURL = descendingFortuneURL;
+	}
+	
+	$.get(fortuneURL)
+	.success( getRandomFortuneRowsFirstTime ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
 	.complete( function() { } );
 };
 
@@ -132,7 +253,7 @@ var newFortuneTextInputChange = function(e) {
 
 $("#new-fortune").bind("input propertychange", newFortuneTextInputChange);
 
-$("div.fortune, div.generate").bind('click', fortuneClick).bind('click', getOnClick);
+$("div.fortune, div.generate").bind('click', fortuneClick);
 
 /*
  * 2013Jan15  Paul Nichols
