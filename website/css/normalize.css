@@ -502,3 +502,14 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/* ==========================================================================
+   My Changes
+   ========================================================================== */
+/*adjust font-size for Firefox*/
+   @-moz-document url-prefix() {
+    body{
+        font-size: 90%;
+    }
+
+   }
