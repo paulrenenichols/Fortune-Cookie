@@ -9,8 +9,8 @@ $("div.fortune").bind('click', fortuneClick);
 
 var fortuneClick = function(e) {
 	console.log("fortuneClick");
-	if( $(".cookie").hasClass("closed") ) {
-		$(".cookie").switchClass("closed", "open", 500, "easeOutQuint");
+	if( $(".cookie, #cookie-break").hasClass("closed") ) {
+		$(".cookie, #cookie-break").switchClass("closed", "open", 500, "easeOutQuint");
 		  $("div#scroll").fadeIn(400, function () {
 			  $("div#scroll p").fadeIn(100);
 			  });
@@ -19,7 +19,7 @@ var fortuneClick = function(e) {
 	}
 	else {
  		
-			  $(".cookie").switchClass("open", "closed", 500, "easeOutQuint");
+			  $(".cookie, #cookie-break").switchClass("open", "closed", 500, "easeOutQuint");
 			  $("div#scroll").fadeOut(50);
 	}
 };

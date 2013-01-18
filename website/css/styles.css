@@ -114,6 +114,13 @@ body{
                     width:100%;
                 }
 
+
+                #cookie-break img{
+                    width: 100%;
+                    position: relative;
+                    z-index: 0;
+                }
+
              div#scroll{
                 width:350px;
                 margin: 45px 0 140px;
@@ -158,6 +165,19 @@ body{
                 left: 117px;
                 /*left: 50%; /*responsive*/
             }
+
+            #cookie-break.open{
+                width:166px;
+                left: -45px;
+                top: -9px;
+            }
+
+            #cookie-break.closed{
+                width: 142px;
+                left: 88px;
+                top: -8px;
+            }
+
     /*Animate Crumbs*/
 
             span.crumbs{
