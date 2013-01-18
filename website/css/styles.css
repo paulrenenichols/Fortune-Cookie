@@ -5,6 +5,9 @@
 
 
 /*///////Decorative///////////*/
+::selection{
+    background: rgba(222, 222, 222, 0);
+}
 
 /*Fortune*/
 
@@ -112,18 +115,17 @@ body{
                 }
 
              div#scroll{
-                width:300px;
+                width:350px;
                 margin: 45px 0 140px;
                 text-align: center;
                 display:none;
             }
 
                 #scroll p{
-                    width: 88%;
+                    width: 74%;
                     height: 59px;
-                    padding: 0.75em 0.75em 0 2.25em;
+                    padding: 0.75em 3.3em 0 2.25em;
                     margin: 0 auto;
-                    display:none;
                 }
 
 
@@ -136,24 +138,24 @@ body{
             width: 95%;
         }*/
             #cookie-left.open{
-                width: 329px;
-                left: -300px;   
+                width: 350px;
+                left: -290px;   
             }
 
             #cookie-right.open{
-                width: 329px;
-                left: 300px;
+                width: 350px;
+                left: 285px;
             }
 
             #cookie-left.closed{
                 width: 300px;
-                left: -150px;
+                left: -123px;
                 /*left: 50%; /*responsive*/
             }
 
             #cookie-right.closed{
                 width: 300px;
-                left: 150px;
+                left: 117px;
                 /*left: 50%; /*responsive*/
             }
     /*Animate Crumbs*/
