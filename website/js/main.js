@@ -267,4 +267,4 @@ $("div.fortune, div.generate").bind('click', fortuneClick);
  */
 $("#share").click( submitNewFortune );
 
-}
+});
