@@ -17,7 +17,6 @@ body{
     background: url('../img/smooth_wall.png');
     background: url('../img/pw_maze_white_@2X.png');
     font-family: "Nexa Book", Helvetiva, Veradana, sans-serif;
-
 }
 
 /*adjust font-size for Firefox*/
@@ -212,9 +211,9 @@ fieldset{
                     margin: 0 auto;
                 }
     /*Fortune Cookie Hover*/
-    div.fortune:hover {
+    /*div.fortune:hover {
         top: -12px;
-    }
+    }*/
     /*Open and close fortune*/
         /*.open{
             width:75%;
