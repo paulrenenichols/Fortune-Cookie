@@ -1,12 +1,4 @@
 
-/*
-var fortuneClick = function(e) {
-	$(".cookie").toggleClass("open closed");
-};
-
-$("div.fortune").bind('click', fortuneClick);
-*/
-
 $(document).ready(function() {
 
 var fortuneClick = function(e) {
@@ -25,20 +17,6 @@ var fortuneClick = function(e) {
 			  $("div#scroll").fadeOut(50);
 	}
 };
-
-var getFortuneBody = function(data) {
-	var couchData = $.parseJSON(data);
-	var rows = couchData['rows'];
-	var fortune = rows[0]['value'];
-	$("div#scroll p").text(fortune);
-};
-
-var getOnClick = function(e) {
-	var jqxhr = $.get("http://127.0.0.1:5984/fortunes/_design/fortune/_view/random_fortune?key=0.3")
-	.success( getFortuneBody ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
-	.complete( function() { } );
-};
-
 
 
 /*
