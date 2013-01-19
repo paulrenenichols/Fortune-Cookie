@@ -262,7 +262,7 @@ $(document).ready(function() {
 	var submitNewFortune = function(event) {
 		
 		//This line of code prevents page reload when we click the submit button.
-		e.preventDefault();
+		event.preventDefault();
 		
 		postNewFortuneToDatabase( $("#new-fortune").val() );
 	};
