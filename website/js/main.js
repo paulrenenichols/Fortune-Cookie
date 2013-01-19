@@ -66,7 +66,6 @@ $(document).ready(function() {
 		 */
 		
 		var randomIndexIntoReturnRows = function(countOfRows) {
-			console.log("countOfRows: " + countOfRows + " Random Index: " + Math.floor(countOfRows * Math.random()));
 			//console.log("countOfRows: " + countOfRows + " Random Index: " + Math.floor(countOfRows * Math.random()));
 			return Math.floor(countOfRows * Math.random());
 		};
