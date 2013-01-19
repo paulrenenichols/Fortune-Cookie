@@ -7,6 +7,8 @@ var fortuneClick = function(e) {
 $("div.fortune").bind('click', fortuneClick);
 */
 
+$(document).ready(function() {
+
 var fortuneClick = function(e) {
 	console.log("fortuneClick");
 	if( $(".cookie, #cookie-break").hasClass("closed") ) {
@@ -264,3 +266,5 @@ $("div.fortune, div.generate").bind('click', fortuneClick);
  * 
  */
 $("#share").click( submitNewFortune );
+
+}

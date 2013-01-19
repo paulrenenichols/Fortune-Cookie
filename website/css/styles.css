@@ -211,8 +211,10 @@ fieldset{
                     padding: 0.75em 3.3em 0 2.25em;
                     margin: 0 auto;
                 }
-
-
+    /*Fortune Cookie Hover*/
+    div.fortune:hover {
+        top: -12px;
+    }
     /*Open and close fortune*/
         /*.open{
             width:75%;
