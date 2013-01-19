@@ -51,7 +51,81 @@ $(document).ready(function() {
 	 */
 	var getRandomFortune = function() {
 		
-
+		/*
+		 * 2013Jan19 16:56 Paul Nichols
+		 * 
+		 * I tried putting these three inner function definitions at the bottom of
+		 * this outer function.  That change broke the code.
+		 * 
+		 * Now that the definitions are back at the top, it works.
+		 * 
+		 * I should learn why this is the case some time.  I assumed that the
+		 * hoisting of variables would make it so that there would not be a difference
+		 * in behavior when these function definitions are moved to a different place
+		 * within the getRandomFortuneFunction.
+		 */
+		
+		var putFortuneInScrollElement = function(fortuneBody) {
+			//console.log("modifying scroll element");
+			//console.log(fortuneBody);
+			$("div#scroll p").text(fortuneBody);
+		};
+		
+		/*
+		 * This function is the event handler for successfully
+		 * grabbing our random fortune data the first time.
+		 * 
+		 * If we get zero rows, we try again.
+		 * 
+		 * When we try again, we do the opposite of what we
+		 * did the first time.  If we searched ascending the
+		 * first time, we search descending the second time.
+		 * 
+		 * If we searched descending the first time, we search
+		 * ascending the second time.
+		 */
+		var getRandomFortuneRowsFirstTime = function(data) {
+			//console.log("getRandomFortuneRowsFirstTime");
+			var couchData = $.parseJSON(data);
+			var randomFortuneRows = couchData['rows'];
+			
+			if( randomFortuneRows.length == 0 ) {
+				
+				/*
+				 * Do the opposite search of last time.
+				 */
+				if( getFortunesDescending ) { //if we searched descending last time, do ascending this time
+					
+					fortuneURL = ascendingFortuneURL;
+				}
+				else { //if we did ascending search last time, do descending this time
+					
+					fortuneURL = descendingFortuneURL;
+				}
+				$.get(fortuneURL)
+				.success( getRandomFortuneRowsSecondTime ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
+				.complete( function() { } );
+			}
+			else { //We have rows, use the first one.
+				putFortuneInScrollElement(randomFortuneRows[0]["value"]);
+			}
+		};
+	
+		/*
+		 * This function is the event handler for successfully
+		 * grabbing our random fortune data the second time.
+		 */
+		var getRandomFortuneRowsSecondTime = function(data) {
+			//console.log("getRandomFortuneRowsSecondTime");
+			var couchData = $.parseJSON(data);
+			var randomFortuneRows = couchData['rows'];
+			
+			putFortuneInScrollElement(randomFortuneRows[0]["value"]);
+		};
+		
+		//console.log("getting random fortune");
+		
+		
 		//Generate a Random Key for searching the view
 		var randomKey = Math.random();
 		
@@ -103,60 +177,7 @@ $(document).ready(function() {
 		$.get(fortuneURL)
 		.success( getRandomFortuneRowsFirstTime ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
 		.complete( function() { } );
-		
-		var putFortuneInScrollElement = function(fortuneBody) {
-			$("div#scroll p").text(fortuneBody);
-		};
-		
-		/*
-		 * This function is the event handler for successfully
-		 * grabbing our random fortune data the first time.
-		 * 
-		 * If we get zero rows, we try again.
-		 * 
-		 * When we try again, we do the opposite of what we
-		 * did the first time.  If we searched ascending the
-		 * first time, we search descending the second time.
-		 * 
-		 * If we searched descending the first time, we search
-		 * ascending the second time.
-		 */
-		var getRandomFortuneRowsFirstTime = function(data) {
-			var couchData = $.parseJSON(data);
-			var randomFortuneRows = couchData['rows'];
-			
-			if( randomFortuneRows.length == 0 ) {
-				
-				/*
-				 * Do the opposite search of last time.
-				 */
-				if( getFortunesDescending ) { //if we searched descending last time, do ascending this time
-					
-					fortuneURL = ascendingFortuneURL;
-				}
-				else { //if we did ascending search last time, do descending this time
-					
-					fortuneURL = descendingFortuneURL;
-				}
-				$.get(fortuneURL)
-				.success( getRandomFortuneRowsSecondTime ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
-				.complete( function() { } );
-			}
-			else { //We have rows, use the first one.
-				putFortuneInScrollElement(randomFortuneRows[0]["value"]);
-			}
-		};
-	
-		/*
-		 * This function is the event handler for successfully
-		 * grabbing our random fortune data the second time.
-		 */
-		var getRandomFortuneRowsSecondTime = function(data) {
-			var couchData = $.parseJSON(data);
-			var randomFortuneRows = couchData['rows'];
-			
-			putFortuneInScrollElement(randomFortuneRows[0]["value"]);
-		};
+
 		
 	};
 	
