@@ -112,6 +112,7 @@ $(document).ready(function() {
 			}
 			else { //We have rows, use the first one.
 				putFortuneInScrollElement(randomFortuneRows[0]["value"]);
+				putFortuneInScrollElement(randomFortuneRows[randomIndexIntoReturnRows(randomFortuneRows.length)]["value"]);
 			}
 		};
 	
