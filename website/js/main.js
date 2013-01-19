@@ -54,7 +54,6 @@ $(document).ready(function() {
 		/*
 		 * 2013Jan19 16:56 Paul Nichols
 		 * 
-		 * I tried putting these three inner function definitions at the bottom of
 		 * I tried putting these four inner function definitions at the bottom of
 		 * this outer function.  That change broke the code.
 		 * 
@@ -69,6 +68,8 @@ $(document).ready(function() {
 		var randomIndexIntoReturnRows = function(countOfRows) {
 			console.log("countOfRows: " + countOfRows + " Random Index: " + Math.floor(countOfRows * Math.random()));
 			return Math.floor(countOfRows * Math.random());
+		};
+		
 		var putFortuneInScrollElement = function(fortuneBody) {
 			//console.log("modifying scroll element");
 			//console.log(fortuneBody);
@@ -111,7 +112,6 @@ $(document).ready(function() {
 				.complete( function() { } );
 			}
 			else { //We have rows, use the first one.
-				putFortuneInScrollElement(randomFortuneRows[0]["value"]);
 				putFortuneInScrollElement(randomFortuneRows[randomIndexIntoReturnRows(randomFortuneRows.length)]["value"]);
 			}
 		};
@@ -125,7 +125,7 @@ $(document).ready(function() {
 			var couchData = $.parseJSON(data);
 			var randomFortuneRows = couchData['rows'];
 			
-			putFortuneInScrollElement(randomFortuneRows[0]["value"]);
+			putFortuneInScrollElement(randomFortuneRows[randomIndexIntoReturnRows(randomFortuneRows.length)]["value"]);
 		};
 		
 		//console.log("getting random fortune");
