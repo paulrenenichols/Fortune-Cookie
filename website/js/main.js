@@ -55,6 +55,7 @@ $(document).ready(function() {
 		 * 2013Jan19 16:56 Paul Nichols
 		 * 
 		 * I tried putting these three inner function definitions at the bottom of
+		 * I tried putting these four inner function definitions at the bottom of
 		 * this outer function.  That change broke the code.
 		 * 
 		 * Now that the definitions are back at the top, it works.
