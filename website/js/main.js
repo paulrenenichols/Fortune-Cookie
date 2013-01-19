@@ -65,6 +65,7 @@ $(document).ready(function() {
 		 * within the getRandomFortuneFunction.
 		 */
 		
+		var randomIndexIntoReturnRows = function(countOfRows) {
 		var putFortuneInScrollElement = function(fortuneBody) {
 			//console.log("modifying scroll element");
 			//console.log(fortuneBody);
