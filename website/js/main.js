@@ -49,7 +49,60 @@ $(document).ready(function() {
 	 * a CouchDB database.  In this case, we are grabbing a random Fortune.
 	 * 
 	 */
-	var getRandomFortune = function(event) {
+	var getRandomFortune = function() {
+		
+
+		//Generate a Random Key for searching the view
+		var randomKey = Math.random();
+		
+		/*
+		 * Generate a "Coin Flip", which is a Random Number
+		 * with a value of either 0 or 1.
+		 * 
+		 * Since Math.random returns a Random Number r such 
+		 * that 0 <= r < 1, then 0 <= 2r < 2.
+		 * 
+		 * So if take the "floor" of 2r, we should get a random
+		 * number that is either 0 or 1.  This is our "Coin Flip".
+		 */
+		var coinFlip = Math.floor( 2 * Math.random() );
+		
+		/*
+		 * We are going to use the Coin Flip to determine whether or not
+		 * we are going to get fortunes from the database in ascending
+		 * or in descending order.
+		 * 
+		 * If coinFlip == 1, we will get the fortunes in descending order.
+		 * 
+		 * If coinFlip == 0, we will get the fortunes in ascending order.
+		 */
+		var getFortunesDescending = false;
+		if( coinFlip == 1 ) {
+			getFortunesDescending = true;
+		}
+		
+		/*
+		 * This is the base URL for the view.  We are going to concatenate
+		 * strings on to the end of it to specify parameters for the searching
+		 * the view.
+		 */
+		var baseViewURL = "http://127.0.0.1:5984/fortunes/_design/fortune/_view/random_fortune?";
+		
+		var endKeyString = "endkey=";
+		var startKeyString = "startkey=";
+		var descendingFortuneString = "&descending=true";
+		
+		var ascendingFortuneURL = baseViewURL + startKeyString + randomKey;
+		var descendingFortuneURL = baseViewURL + endKeyString + randomKey + descendingFortuneString;
+		
+		var fortuneURL = ascendingFortuneURL;
+		if( getFortunesDescending ) {
+			fortuneURL = descendingFortuneURL;
+		}
+		
+		$.get(fortuneURL)
+		.success( getRandomFortuneRowsFirstTime ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
+		.complete( function() { } );
 		
 		var putFortuneInScrollElement = function(fortuneBody) {
 			$("div#scroll p").text(fortuneBody);
@@ -105,60 +158,17 @@ $(document).ready(function() {
 			putFortuneInScrollElement(randomFortuneRows[0]["value"]);
 		};
 		
-		//Generate a Random Key for searching the view
-		var randomKey = Math.random();
-		
-		/*
-		 * Generate a "Coin Flip", which is a Random Number
-		 * with a value of either 0 or 1.
-		 * 
-		 * Since Math.random returns a Random Number r such 
-		 * that 0 <= r < 1, so 0 <= 2r < 2.
-		 * 
-		 * So if take the "floor" of 2r, we should get a random
-		 * number that is either 0 or 1.  This is our "Coin Flip".
-		 */
-		var coinFlip = Math.floor( 2 * Math.random() );
-		
-		/*
-		 * We are going to use the Coin Flip to determine whether or not
-		 * we are going to get fortunes from the database in ascending
-		 * or in descending order.
-		 * 
-		 * If coinFlip == 1, we will get the fortunes in descending order.
-		 * 
-		 * If coinFlip == 0, we will get the fortunes in ascending order.
-		 */
-		var getFortunesDescending = false;
-		if( coinFlip == 1 ) {
-			getFortunesDescending = true;
-		}
-		
-		/*
-		 * This is the base URL for the view.  We are going to concatenate
-		 * strings on to the end of it to specify parameters for the searching
-		 * the view.
-		 */
-		var baseViewURL = "http://127.0.0.1:5984/fortunes/_design/fortune/_view/random_fortune?";
-		
-		var endKeyString = "endkey=";
-		var startKeyString = "startkey=";
-		var descendingFortuneString = "&descending=true";
-		
-		var ascendingFortuneURL = baseViewURL + startKeyString + randomKey;
-		var descendingFortuneURL = baseViewURL + endKeyString + randomKey + descendingFortuneString;
-		
-		var fortuneURL = ascendingFortuneURL;
-		if( getFortunesDescending ) {
-			fortuneURL = descendingFortuneURL;
-		}
-		
-		$.get(fortuneURL)
-		.success( getRandomFortuneRowsFirstTime ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
-		.complete( function() { } );
 	};
 	
+	/*
+	 * This function takes the contents of the text box
+	 * and posts it as a new fortune to the database.
+	 */
 	var postNewFortuneToDatabase = function(fortuneBody) {
+		
+		/*
+		 * Construct the fortune document.
+		 */
 		var fortuneData = {};
 		fortuneData["type"] = "fortune";
 		fortuneData["body"] = fortuneBody;
@@ -167,15 +177,15 @@ $(document).ready(function() {
 		var currentDate = new Date();
 		fortuneData["created_at"] = currentDate.toUTCString();
 		
+		/*
+		 * Convert the fortune document to a JSON string.
+		 */
 		var jsonFortuneData = JSON.stringify(fortuneData);
-		//console.log(jsonFortuneData);
 		
-		
-		//var jqxhr = $.post("http://127.0.0.1:5984/fortunes/", JSON.stringify(fortuneData))
-		//.success( postNewFortuneSuccess ).error( function(err) { /*alert("Error: " + err.responseText + " Status: " + err.status);*/ })
-		//.complete( function() { } );
-		
-		
+		/*
+		 * Send the fortune as a JSON string to the database
+		 * in a POST request using JQuery's ajax method.
+		 */
 		$.ajax({
 			type: "POST",
 			url: "http://127.0.0.1:5984/fortunes/",
@@ -186,6 +196,21 @@ $(document).ready(function() {
 		});
 	};
 	
+	/*
+	 * This is the callback function for a successful
+	 * POST request when fortunes are sent to the database.
+	 * 
+	 * This function clears the text box on a successful submit.
+	 */
+	var postNewFortuneSuccess = function(data) {
+		$("#new-fortune").val("");
+	};
+	
+	
+	/*
+	 * This function performs a naive test to see
+	 * if a URL is embedded in a string of text.
+	 */
 	var foundURLInText = function(text) {
 		
 		/*
@@ -210,17 +235,15 @@ $(document).ready(function() {
 		}
 	};
 	
-	var submitNewFortune = function(e) {
+	/*
+	 * This handles the event of the submit button being clicked.
+	 */
+	var submitNewFortune = function(event) {
 		
 		//This line of code prevents page reload when we click the submit button.
 		e.preventDefault();
 		
 		postNewFortuneToDatabase( $("#new-fortune").val() );
-	};
-	
-	var postNewFortuneSuccess = function(data) {
-		//console.log("fortune posted to database: " + data);
-		$("#new-fortune").val("");
 	};
 	
 	/*
@@ -253,8 +276,17 @@ $(document).ready(function() {
 		}
 	};
 	
+	/*
+	 * This binding checks for changes in the text box to selectively
+	 * enable and disable the submit button.
+	 */
 	$("#new-fortune").bind("input propertychange", newFortuneTextInputChange);
 	
+	
+	/*
+	 * This handles click events on the generate button and the fortune cookie
+	 * image, trigger the animation and the grabbing of fortunes from the database.
+	 */
 	$("div.fortune, div.generate").bind('click', fortuneCookieClickHandler);
 	
 	/*
