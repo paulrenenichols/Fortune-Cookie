@@ -165,9 +165,10 @@ $(document).ready(function() {
 		var endKeyString = "endkey=";
 		var startKeyString = "startkey=";
 		var descendingFortuneString = "&descending=true";
+		var limitString = "&limit=5";
 		
-		var ascendingFortuneURL = baseViewURL + startKeyString + randomKey;
-		var descendingFortuneURL = baseViewURL + endKeyString + randomKey + descendingFortuneString;
+		var ascendingFortuneURL = baseViewURL + startKeyString + randomKey + limitString;
+		var descendingFortuneURL = baseViewURL + endKeyString + randomKey + descendingFortuneString + limitString;
 		
 		var fortuneURL = ascendingFortuneURL;
 		if( getFortunesDescending ) {
