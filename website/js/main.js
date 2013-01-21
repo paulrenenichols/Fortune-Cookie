@@ -288,17 +288,17 @@ $(document).ready(function() {
 		
 		if (newFortuneContent == "") {  //disable submit if fortune text box is empty
 			
-			$("#share").addClass("submit-disabled");
+			$("#share").addClass("submit-disabled", 500);
 			$("#share").attr("disabled", "disabled");
 		}
 		else if( foundURLInText( $("#new-fortune").val() ) ) {   //disable submit and alert user if they try entering a URL
-			$("#share").addClass("submit-disabled");
+			$("#share").addClass("submit-disabled", 500);
 			$("#share").attr("disabled", "disabled");
 			alert("URLs are not allowed in fortunes.");
 		}
 		else {   //If the text box is not empty, and there are no URLs in the text box, enable submit.
 			
-			$("#share").removeClass("submit-disabled");
+			$("#share").removeClass("submit-disabled", 500);
 			$("#share").removeAttr("disabled");
 		}
 	};
