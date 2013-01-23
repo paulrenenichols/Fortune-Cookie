@@ -251,8 +251,8 @@ a:link, a:visited{
 
     div.fortune-wrapper{
         position: static;
-        width: 20%;
-        margin: 0 auto;
+        width: 300px;
+        margin:2.6% auto 4.6%;
         height: 300px;
     }
 
@@ -411,7 +411,7 @@ a:link, a:visited{
                 }
 
                         .create-fortune h1{
-                        padding: 0 0 20px 0;
+                            padding: 0 0 20px 0;
                         }
 
                 textarea#new-fortune{
@@ -435,16 +435,14 @@ a:link, a:visited{
 /*Footer*/
 
     footer{
-        width: 63%;
         margin: 3% auto 5%;
         text-align: center;
         }
             .about{
-                width: 25%;
+                width: 564px;
                 padding: 0 0 0 2%;
                 margin: 3% auto 5%;
                 display: inline-block;
-                float: left;
             }
                 .about h1{
                     font-size: 1.75em;
@@ -456,10 +454,11 @@ a:link, a:visited{
                     line-height: 1.2em;
                 }
             .profiles{
-                width: 66%;
+                width: 564px;
+                padding: 0;
                 margin: 3% auto 5%;
-                float: left;
                 overflow: auto;
+
             }
 
 
@@ -475,6 +474,8 @@ a:link, a:visited{
                         border-bottom: solid 3px rgba(255, 0, 0, 0.82);
                         background: white;
                         display: inline-block;
+                        position: relative;
+
                     }
 
                         .profiles img{
@@ -490,6 +491,10 @@ a:link, a:visited{
                         .profiles a{
                             color: rgba(255, 0, 0, 0.82);
                             border-bottom: solid 2px rgba(255, 0, 0, 0.82);
+                            bottom: 14px;
+                            position: absolute;
+                            text-align: center;
+                            width: 75%;
                         }
 
                         .profiles a:hover{
@@ -499,28 +504,85 @@ a:link, a:visited{
 
 
     #austin{
+        width: 564px;
         background: rgba(255, 0, 0, 0.82);
         color: white;
         margin: 3% auto 5%;
         clear: both;
     }
 
+
 /*-----------Media Queries--------------*/
 
-@media all and (max-width: 800px){
-    .create-fortune label{
-        margin: -21% auto 0;
-        padding-top: 60px;
-        display: block;
+    @media all and (max-width: 1575px){
+        div.wrapper{
+            overflow-x: hidden;
+        }
+        .about, ul.profiles{    
+            display: block;
+        }
+
+        .about{
+            width:564px;
+        }
     }
 
-    #austin{
-        width:50%;
-    }
-  }
+    @media all and (max-width: 800px){
+        .create-fortune label{
+            margin: -21% auto 0;
+            padding-top: 60px;
+            display: block;
+        }
 
-@media all and (max-width: 320px){
-    body{
-        overflow:hidden;
+        #austin{
+            width:50%;
+        }
+
+        footer{
+            margin: 0 auto;
+        }
+      }
+
+    @media all and (max-width: 690px){
+        .about{
+            width:81.7%;
+        }
+
+        .profiles{
+            width:81.7%;
+            display: inline-block;
+
+        }
+
+        .profiles li{
+            width: 33.3333%;
+        }
+
+        #betsy-dupuis{
+            margin-right: -44px;
+        }
+        #paul-nichols{
+            margin-left: 17%;
+        }
+
+        #github{
+            margin: 0 auto;
+            width:88%;
+            height: auto;
+            overflow: hidden;
+            float: none;
+            position: static;
+            display: block;
+            clear: both;
+            background: none;
+            border: 0;
+        }
+
+        #github a{
+            overflow: hidden;
+            margin: 3% auto 5%;
+            position: static;
+        }
+
+    @media all and (max-width: 320px){
     }
-}
