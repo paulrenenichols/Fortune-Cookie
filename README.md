@@ -1,4 +1,4 @@
 Fortune-Cookie
 ==============
 
-Simple Web Page that displays Fortunes
+Fun, jQuery animated Fortune Cookie that pulls user-genarated fortunes via jQuery Ajax from a noSQL CouchDB database.
