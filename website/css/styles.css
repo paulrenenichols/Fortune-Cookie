@@ -1,3 +1,13 @@
+/*
+List of colors Used
+
+Fortune Area Gradient
+
+Sky Blue - #28D4FF - rgb(40, 212, 255)
+Teal - #72af9b
+
+*/
+
 /*adjust font-size for Firefox*/
 @-moz-document url-prefix() {
 body{
@@ -7,8 +17,148 @@ body{
 
 /*Font Import*/
 
-
-
+/* @license
+ * MyFonts Webfont Build ID 2408316, 2012-11-10T20:41:10-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Nexa Heavy by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/heavy/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: 10,000
+ * 
+ * Webfont: Nexa Book Italic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/book-italic/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Thin by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/thin/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Book by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/book/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Light Italic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/light-italic/
+ * Copyright: Copyright (c) 2012 by Svetoslav Simov. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Bold Italic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/bold-italic/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Heavy Italic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/heavy-italic/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Regular by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/regular/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa XBold Italic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/xbold-italic/
+ * Copyright: Copyright (c) 2012 by Svetoslav Simov. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Black Italic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/black-italic/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Thin Italic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/thin-italic/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Bold by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/bold/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa XBold by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/xbold/
+ * Copyright: Copyright (c) 2010 by Svetoslav Simov. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Black by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/black/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Light by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/light/
+ * Copyright: Copyright (c) 2010 by Svetoslav Simov. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Nexa Italic by Fontfabric
+ * URL: http://www.myfonts.com/fonts/font-fabric/nexa/italic/
+ * Copyright: Copyright (c) 2012 by Fontfabric LLC. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2408316
+ * 
+ * © 2012 Bitstream Inc
+*/
+  
+@font-face {font-family: 'NexaHeavy';src: url('../assets/webfonts/24BF7C_0_0.eot');src: url('../assets/webfonts/24BF7C_0_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_0_0.woff') format('woff'),url('assets/webfonts/24BF7C_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Book-Italic';src: url('../assets/webfonts/24BF7C_1_0.eot');src: url('../assets/webfonts/24BF7C_1_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_1_0.woff') format('woff'),url('assets/webfonts/24BF7C_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'NexaThin';src: url('../assets/webfonts/24BF7C_2_0.eot');src: url('../assets/webfonts/24BF7C_2_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_2_0.woff') format('woff'),url('assets/webfonts/24BF7C_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Book';src: url('../assets/webfonts/24BF7C_3_0.eot');src: url('../assets/webfonts/24BF7C_3_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_3_0.woff') format('woff'),url('assets/webfonts/24BF7C_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Light-Italic';src: url('../assets/webfonts/24BF7C_4_0.eot');src: url('../assets/webfonts/24BF7C_4_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_4_0.woff') format('woff'),url('assets/webfonts/24BF7C_4_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Bold-Italic';src: url('../assets/webfonts/24BF7C_5_0.eot');src: url('../assets/webfonts/24BF7C_5_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_5_0.woff') format('woff'),url('assets/webfonts/24BF7C_5_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Heavy-Italic';src: url('../assets/webfonts/24BF7C_6_0.eot');src: url('../assets/webfonts/24BF7C_6_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_6_0.woff') format('woff'),url('assets/webfonts/24BF7C_6_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'NexaRegular';src: url('../assets/webfonts/24BF7C_7_0.eot');src: url('../assets/webfonts/24BF7C_7_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_7_0.woff') format('woff'),url('assets/webfonts/24BF7C_7_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-XBold-Italic';src: url('../assets/webfonts/24BF7C_8_0.eot');src: url('../assets/webfonts/24BF7C_8_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_8_0.woff') format('woff'),url('assets/webfonts/24BF7C_8_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Black-Italic';src: url('../assets/webfonts/24BF7C_9_0.eot');src: url('../assets/webfonts/24BF7C_9_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_9_0.woff') format('woff'),url('assets/webfonts/24BF7C_9_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Thin-Italic';src: url('../assets/webfonts/24BF7C_A_0.eot');src: url('../assets/webfonts/24BF7C_A_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_A_0.woff') format('woff'),url('assets/webfonts/24BF7C_A_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Bold';src: url('../assets/webfonts/24BF7C_B_0.eot');src: url('../assets/webfonts/24BF7C_B_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_B_0.woff') format('woff'),url('assets/webfonts/24BF7C_B_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-XBold';src: url('../assets/webfonts/24BF7C_C_0.eot');src: url('../assets/webfonts/24BF7C_C_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_C_0.woff') format('woff'),url('assets/webfonts/24BF7C_C_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'NexaBlack';src: url('../assets/webfonts/24BF7C_D_0.eot');src: url('../assets/webfonts/24BF7C_D_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_D_0.woff') format('woff'),url('assets/webfonts/24BF7C_D_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Light';src: url('../assets/webfonts/24BF7C_E_0.eot');src: url('../assets/webfonts/24BF7C_E_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_E_0.woff') format('woff'),url('webfonts/24BF7C_E_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Nexa-Regular-Italic';src: url('../assets/webfonts/24BF7C_F_0.eot');src: url('../assets/webfonts/24BF7C_F_0.eot?#iefix') format('embedded-opentype'),url('../assets/webfonts/24BF7C_F_0.woff') format('woff'),url('webfonts/24BF7C_F_0.ttf') format('truetype');}
+ 
 
 
 /*-----------Decoration--------------*/
@@ -24,8 +174,11 @@ body::selection, #scroll p::selection{
 body{    
     background-color: #72af9b;
     background: url('../img/pw_maze_white.png');
-    font-family: "Nexa Book", Helvetiva, Veradana, sans-serif;
     color: grey;
+    font-family: Nexa-Book, "Nexa Book", Helvetic, Verdana, Tahoma, Geneva, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: baseline;
 }
 
 a:link, a:visited{
@@ -39,18 +192,14 @@ a:link, a:visited{
 
 /*Scrolls*/
 
-    h1{
-        color:grey;
-        text-shadow: -1px 2px 1px rgba(255, 255, 255, 0.8);
-        font-family: "Nexa Light", sans-serif;
-        font-weight: normal;
-        line-height: 1.1618em;
-    }
 
-    h2{
+    h1, h2{
         color:grey;
+        font-family: Nexa-Light, "Nexa Light", Helvetic, Verdana, Tahoma, Geneva, sans-serif;
+        font-weight: normal;
+        font-style: normal;
         text-shadow: -1px 2px 1px rgba(255, 255, 255, 0.8);
-        font-family: "Nexa Light", sans-serif;
+        font-family: "Nexa Light", 
         font-weight: normal;
         line-height: 1.1618em;
     }
@@ -134,8 +283,9 @@ a:link, a:visited{
         /*Fonts*/
             color: white;
             font-size: 23px;
-            font-family: "Nexa Regular";
+            font-family: Nexa-Regular, "Nexa Regular", Helvetic, Verdana, Tahoma, Geneva, sans-serif;
             font-weight: normal;
+            font-style: normal;
             text-shadow: 0px -1px 0px #999;
         /*Backgrounds*/
             filter: dropshadow(color=#999999, offx=0, offy=-1);
@@ -207,8 +357,9 @@ a:link, a:visited{
     /*Fonts*/
         color: white;
         font-size: 23px;
-        font-family: "Nexa Regular";
+        font-family: Nexa-Regular, "Nexa Regular", Helvetic, Verdana, Tahoma, Geneva, sans-serif;
         font-weight: normal;
+        font-style: normal;
         text-shadow: 0px -1px 0px #999;
     /*Borders*/
         border-radius: 50px;
@@ -237,7 +388,18 @@ a:link, a:visited{
         width: 100%; 
     }
 
+/*FB Like*/
+.fb-wrapper{
+    position: relative;
+}
+
+    .fb-like{
+        position: absolute;
+        left:20px;
+        top:20px;
+    }
 /*header*/
+
 
     header{
         text-align: center;
