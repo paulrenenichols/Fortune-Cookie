@@ -18,6 +18,8 @@
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
+
+<!--=======SCRIPTS - FACEBOOK LIKE BUTTON===========-->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -30,23 +32,17 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-<!-- 
-Wrapper to provide background
--->
-
+<!--=======Wrapper - Background Gradients===========-->
 <div class="wrapper">
-    <div class="fb-like" data-href="http://www.betsydupuis.com" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
-<!--
-    Header and Tagline
--->
-    <header>
-        <h1>Fortune Cookie Generator</h1>
+<!--=======FACEBOOK LIKE BUTTON===========-->
+    <div class="fb-wrapper"><div class="fb-like" data-href="http://www.betsydupuis.com" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div></div>
+<!--=======HEADER - TITLE AND TAGLINE===========-->
+    <header title="Fortune Cookie Generator">
+        <h1>Fortune Cookie Generator</h1> <!--Hidden, but kept for semantic purposes.-->
         <h2>Learn your future and earn good luck.</h2>
     </header>
 
-<!--
-    Fortune and Wrapper
--->
+<!--=======WRAPPER - FORTUNE COOKIE ANIMATION===========-->
     <div class="fortune-wrapper">
         <div class="fortune">
             <div id="cookie-left" class="cookie closed"><img src="img/cookie-left.png" class="cookie-pic"></div>
@@ -56,20 +52,14 @@ Wrapper to provide background
             <div id="cookie-right" class="cookie closed"><img src="img/cookie-right.png" class="cookie-pic"></div>
         </div>
     </div>
-
-<!--
-    Generate Button
--->
+<!--=======BUTTON - FORTUNE GENERATION===========-->
     <div class="generate">
-        <h2>Generate Fortune</h2>
+        <h2 title="Generate Fortune">Generate Fortune</h2>
     </div>
 
-<!--
-    Form for Fortune Generation
--->
-
+<!--=======FORM - FORTUNE COOKIE SUBMISSION===========-->
     <div class="form-fortune">
-            <form class="create-fortune">
+            <form class="create-fortune" title="Create your own Fortune">
             <fieldset>
                 <legend><h1>Do you have wisdom to share?</h1></legend>                   
                     <label for="new-fortune">Try writing your own fortune!</label>
@@ -79,16 +69,14 @@ Wrapper to provide background
             <input type="submit" id="share" class="submit-disabled" value="Share" disabled="disabled"/>
             </form>
     </div>
-
-</div> <!--Close Wrapper-->
-<!--
-    Footer with information about development.
--->
+<!--Close Wrapper-->
+</div>
+<!--================FOOTER=============-->
 <footer>
-    <div class="about">
+    <div class="about" title="About the Fortune Cookie">
         <h1>About the Fortune Cookie</h1>
-        <p>Fortune cookies have a rich history of providing inuitive widsom and fun. That's why we've brought Fortune Cookie Wisdom to life.</p>
-        <p>Fortune Cookie Widsom is an interactive HTML5/JavaScript application built on the jQuery and jQuery UI libraries backed by CouchDB.</p>
+        <p title="Why Fortune Cookies?">Fortune cookies have a rich history of providing inuitive widsom and fun. That's why we've brought Fortune Cookie Wisdom to life.</p>
+        <p title="How was the Fortune Cookie made?">Fortune Cookie Widsom is an interactive HTML5/JavaScript application built on the jQuery and jQuery UI libraries backed by CouchDB.</p>
     </div>
     <ul class="profiles" title="Page Authors">
         <li id="betsy-dupuis">
@@ -106,15 +94,13 @@ Wrapper to provide background
         <li id="github">
             <h2>About the App</h2>
             <p>If you would like to learn more about this project, the source code is available on GitHub.</p>
-            <a hred="http://www.github.com">View this Project on Github.</a>
+            <a href="https://github.com/paulrenenichols/Fortune-Cookie">View this Project on Github.</a>
         </li>
     </ul>
-    <p id="austin">Made in Austin, TX.</p>
+    <p id="austin" title="Made in Austin, TX">Made in Austin, TX.</p>
 </footer>
 
-<!--
-    Scripts
--->
+<!--================Scripts=============-->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
@@ -130,5 +116,6 @@ Wrapper to provide background
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+<!--================Closings=============-->
     </body>
 </html>
