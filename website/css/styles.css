@@ -650,8 +650,7 @@ a:link, a:visited{
                     }
 
                         .profiles img{
-                            width: 100px;
-                            height:100px;
+                            width: 90%;
                             border-radius: 100px;
                         }
 
