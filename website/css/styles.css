@@ -206,8 +206,14 @@ a:link, a:visited{
 
     .wrapper{
         background: #72af9b;
-        background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 245, 0, 0.42) 0%, rgba(102, 131, 27, 0.5) 20%,rgb(0, 117, 97) 100%);
-        background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 245, 0, 0.42) 0%, rgba(102, 131, 27, 0.5) 20%,rgb(40, 212, 255) 100%);
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: -moz-radial-gradient(center, ellipse cover, rgba(255, 245, 0, 0.42) 0%, rgba(102, 131, 27, 0.5) 20%, rgb(40, 212, 255)  100%); /* FF3.6+ */
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 245, 0, 0.42) 0%, rgba(102, 131, 27, 0.5) 20%, rgb(40, 212, 255)  100%); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 245, 0, 0.42) 0%, rgba(102, 131, 27, 0.5) 20%, rgb(40, 212, 255) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover,rgba(255, 245, 0, 0.42) 0%, rgba(102, 131, 27, 0.5) 20% rgb(40, 212, 255) 100%); /* Opera 11.10+ */
+        background: -ms-radial-gradient(center, ellipse cover,rgba(255, 245, 0, 0.42) 0%, rgba(102, 131, 27, 0.5) 20% rgb(40, 212, 255) 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center, rgba(255, 245, 0, 0.42) 0%, rgba(102, 131, 27, 0.5) 20% rgb(40, 212, 255) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00604848', endColorstr='#12000000',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
         padding: 20px 0 0 0;
         }
 
@@ -227,7 +233,7 @@ a:link, a:visited{
                 background: url('../img/exclusive_paper.png');
                 border-bottom: solid 3px rgba(165, 163, 172, 0.66);
                 border-top: solid 3px rgba(165,163,172,0.4);
-                -webkit-box-shadow: rgba(22, 22, 22, 0.298039) 0px 20px 70px 0px;
+                -webkit-box-shadow: rgba(22, 22, 22, 0.298039) 0px 20px 70px 0px; /*Chrome, Safari*/
                 box-shadow: rgba(22, 22, 22, 0.298039) 0px 20px 70px 0px;
             }
 
@@ -260,19 +266,21 @@ a:link, a:visited{
         background: rgb(255,168,76); /* Old browsers */
         /* IE9 SVG, needs conditional override of 'filter' to 'none' */
         background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMTglIiBzdG9wLWNvbG9yPSIjZmZhODRjIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmN2IwZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-        background: -moz-radial-gradient(center, ellipse cover,  rgba(255,168,76,1) 18%, rgba(255,123,13,1) 100%); /* FF3.6+ */
+        background: -moz-radial-gradient(center, ellipse cover,  rgba(255,168,76,1) 18%,rgba(255,123,13,1) 100%)); /* FF3.6+ */
         background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(18%,rgba(255,168,76,1)), color-stop(100%,rgba(255,123,13,1))); /* Chrome,Safari4+ */
         background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,168,76,1) 18%,rgba(255,123,13,1) 100%); /* Chrome10+,Safari5.1+ */
         background: -o-radial-gradient(center, ellipse cover,  rgba(255,168,76,1) 18%,rgba(255,123,13,1) 100%); /* Opera 12+ */
         background: -ms-radial-gradient(center, ellipse cover,  rgba(255,168,76,1) 18%,rgba(255,123,13,1) 100%); /* IE10+ */
-        background: radial-gradient(ellipse at center,  rgba(255,168,76,1) 18%,rgba(255,123,13,1) 100%); /* W3C */
+        background: radial-gradient(center, ellipse cover,  rgba(255,168,76,1) 18%,rgba(255,123,13,1) 100%); /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+    /*Borders*/
         -webkit-box-shadow: inset 0px -12px 3px 2px rgba(73, 29, 29, 0.77);
         box-shadow: inset 0px -12px 3px 2px rgba(73, 29, 29, 0.77);
     }
 
     div.generate:hover{
-        background: -webkit-linear-gradient(top, rgba(230, 173, 200, 0.5) 0%,rgba(255, 0, 0, 0.82) 100%);
+        background: -moz-radial-gradient(top, rgba(230, 173, 200, 0.5) 0%,rgba(255, 0, 0, 0.82) 100%);/* FF3.6+ */
+        background: -webkit-linear-gradient(top, rgba(230, 173, 200, 0.5) 0%,rgba(255, 0, 0, 0.82) 100%);/* Chrome10+,Safari5.1+ */
     }
 
         div.generate h2{
@@ -574,6 +582,7 @@ a:link, a:visited{
 
                         .create-fortune h1{
                             padding: 0 0 20px 0;
+                            text-align: center;
                         }
 
                 textarea#new-fortune{
@@ -617,9 +626,9 @@ a:link, a:visited{
                 }
             .profiles{
                 width: 564px;
+                height: 333px;
                 padding: 0;
                 margin: 3% auto 5%;
-                overflow: auto;
 
             }
 
@@ -635,7 +644,7 @@ a:link, a:visited{
                         border-top: solid 2px rgba(255, 0, 0, 0.82);
                         border-bottom: solid 3px rgba(255, 0, 0, 0.82);
                         background: white;
-                        display: inline-block;
+                        display: block;
                         position: relative;
 
                     }
@@ -651,12 +660,14 @@ a:link, a:visited{
                         }
 
                         .profiles a{
+                            display: block;
                             color: rgba(255, 0, 0, 0.82);
                             border-bottom: solid 2px rgba(255, 0, 0, 0.82);
                             bottom: 14px;
                             position: absolute;
                             text-align: center;
                             width: 75%;
+                            box-sizing:border-box;
                         }
 
                         .profiles a:hover{
@@ -712,6 +723,7 @@ a:link, a:visited{
 
         .profiles{
             width:81.7%;
+            height: auto;
             display: inline-block;
 
         }
@@ -747,4 +759,8 @@ a:link, a:visited{
         }
 
     @media all and (max-width: 320px){
+
+        #betsy-dupuis, #paul-nichols{
+            margin: 0;
+        }
     }
